@@ -9,7 +9,6 @@
 **In this project we have GIT hub API to fetch user data from the server and displays that data on the user screen.**
 
 ## Features
-**Showing user image**
 
 **Displaying user Profile picture**
 
