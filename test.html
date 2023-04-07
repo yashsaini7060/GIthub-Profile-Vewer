@@ -28,25 +28,25 @@
     }
   </script>
 </head>
-<body class="bg-dblack h-[100vh] text-offwhite ">
-  <img src="./img/github.png" alt="" class="mx-auto mb-[2rem] pt-2">
+<body class="bg-dblack md:h-[100vh]  text-offwhite ">
+  <img src="./img/github.png" alt="" class="mx-auto mb-[2rem] pt-2 w-[10rem] sm:w-[15rem]">
   <div class="flex flex-col items-center ">
 
-      <div class="search-area felx w-[45rem]">
-          <input class="bg-black w-[35rem] h-[3rem] rounded-xl text-[1.2rem] px-4" type="text" name="" id="username" placeholder="Enter Github Username" autocomplete="off">
-          <button class="bg-notblack text-xl h-[3rem] w-[8.7rem] px-3 ml-4 rounded-md"onclick="getDetails();">Get Details</button>
+      <div class="search-area flex flex-col sm:flex-row sm:w-[45rem] ">
+          <input class="bg-black w-[22rem] sm:w-[35rem] h-[3rem] mb-4 sm:mb-0 rounded-xl text-[1.2rem] px-4" type="text" name="" id="username" placeholder="Enter Github Username" autocomplete="off">
+          <button class="bg-notblack text-xl h-[3rem] w-[8.7rem] sm:px-3 sm:ml-4 rounded-md mx-auto"onclick="getDetails();">Get Details</button>
       </div>
 
-      <div class="output-container hidden w-[45rem] mt-8 px-6 py-4 bg-black rounded-xl justify-around" id="output">
-        <div class="flex profile w-[28%]" id="profile"></div>
-        <div class="w-[64%]">
-          <div class="username">
+      <div class="output-container hidden w-[90%] sm:w-[45rem] mt-8 px-2 sm:px-6 py-4 bg-black rounded-xl flex-col sm:flex-row justify-around" id="output">
+        <div class="flex profile sm:w-[28%]" id="profile"></div>
+        <div class="w-[100%] sm:w-[64%] ">
+          <div class="username text-center sm:text-left my-2 sm:my-0">
             <h1 class="text-2xl font-medium" id="name"></h1>
           </div>
-          <div class="bio">
+          <div class="bio text-center sm:text-left">
             <p class="text-lg" id="bio"></p>
           </div>
-          <div class="info">
+          <div class="info w-[80%] sm:w-auto mx-auto my-2 sm:my-0">
             <ul class="flex " >
               <li class="text-lg">
                     <svg text="muted" aria-hidden="true" height="29" class="fill-offwhite" viewBox="0 0 16 16" version="1.1" width="22" data-view-component="true" class="octicon octicon-people">
@@ -62,7 +62,7 @@
                   <path d="M3 2.75A2.75 2.75 0 0 1 5.75 0h14.5a.75.75 0 0 1 .75.75v20.5a.75.75 0 0 1-.75.75h-6a.75.75 0 0 1 0-1.5h5.25v-4H6A1.5 1.5 0 0 0 4.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 0 1-.6 1.374A3.251 3.251 0 0 1 3 18.75ZM19.5 1.5H5.75c-.69 0-1.25.56-1.25 1.25v12.651A2.989 2.989 0 0 1 6 15h13.5Z"></path><path d="M7 18.25a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0L7.397 23.46a.25.25 0 0 1-.397-.2v-5.01Z"></path>
               </svg>
               </li>
-              <li class="text-lg mx-2" id="repo"></li>
+              <li class="text-lg ml-2" id="repo"></li>
             </ul>
           </div>
         </div>
@@ -89,7 +89,7 @@
           document.getElementById('followers').innerHTML=data.followers +" Followers";
           document.getElementById('following').innerHTML=data.following + " Following";
           document.getElementById('profile').innerHTML=`
-          <img class="rounded-full h-[12rem] border-2 border-notblack" src="${data.avatar_url}" />
+          <img class="rounded-full h-[8rem] sm:h-[12rem] border-2 border-notblack mx-auto" src="${data.avatar_url}" />
           `;
           document.getElementById('repo').innerHTML=data.public_repos + " Repositories";
 
